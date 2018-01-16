@@ -32,3 +32,6 @@ html, body {
 	align-items: center;
 }
 
+input:focus {
+    outline: none;
+  }
