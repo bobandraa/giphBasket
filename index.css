@@ -2,5 +2,11 @@ html, body {
 	font-family: "helvetica neue", sans-serif;
 	font-weight: 300;
 	background-color: #ffdab9;
-	margin: 10px;
+	margin: 20px;
+}
+
+.container > div {
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
