@@ -1,0 +1,37 @@
+html, body {
+	font-family: "helvetica neue", sans-serif;
+	font-weight: 300;
+	background-color: #ffdab9;
+	margin: 20px;
+}
+
+.container > div {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.header {
+	font-size: 40px;
+	padding-bottom: 20px;
+}
+
+.search {
+	background-color: #FFBF86;
+	border-radius: 15px;
+	margin: 15px;
+}
+
+.search > input {
+	font-family: "helvetica neue", sans-serif;
+	font-weight: 300;
+	font-size: 22px;
+	border-radius: 15px;
+	margin: 40px;
+	padding: 20px;
+	align-items: center;
+}
+
+input:focus {
+    outline: none;
+  }
