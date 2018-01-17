@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/bobandraa/giphBasket/issues"
   },
-  "homepage": "https://github.com/bobandraa/giphBasket#readme"
+  "homepage": "https://github.com/bobandraa/giphBasket#readme",
+  "dependencies": {
+    "express": "^4.16.2"
+  }
 }
