@@ -16,13 +16,13 @@ html, body {
 	padding-bottom: 20px;
 }
 
-.search {
+#search {
 	background-color: #FFBF86;
 	border-radius: 15px;
 	margin: 15px;
 }
 
-.search > input {
+#search > input {
 	font-family: "helvetica neue", sans-serif;
 	font-weight: 300;
 	font-size: 22px;
