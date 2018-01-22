@@ -17,12 +17,16 @@ html, body {
 }
 
 .gif-box {
-	text-align: center;}
+	text-align: center;
+	margin: 20px;
+}
+
 
 #search {
 	background-color: #FFBF86;
 	border-radius: 15px;
-	margin: 15px;
+	margin: 15px auto;
+  /*max-width: 90%*/
 }
 
 #search > input {
