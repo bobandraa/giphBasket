@@ -5,19 +5,17 @@ function buildUrl (userQuery){
 	let apiKey ="&api_key=Yzt6D7cNWlMRwMfklZWcERZvLk5Tnart";
 	let query = "&q=" + userQuery;
 	let url = api + apiKey + query;
-	console.log(url);
 	return url;
 };
 
 function getText (event){
-  let word = event.target.value;
   if (event.keyCode === 13)
   {
-	console.log(word);
+  let word = event.target.value;
+	// console.log(word);
   let url = buildUrl(word);
   searchData(url);
   }
-  // return word;
 };
 
 function searchData(url) { 
@@ -25,7 +23,15 @@ function searchData(url) {
 	.then(function(response){
 		return response.json();
 	})
-	.then(function(json) {
-		console.log(json.data);
+	.then(function(gifJson) {
+		for (i = 0; i < gifJson.data.length; i++){
+			let gifUrl = gifJson.data[i].images.original.url;
+			displayGif(gifUrl);
+		}
 	})
-};
+}; 
+
+function displayGif(gifUrl) {
+	
+
+}
