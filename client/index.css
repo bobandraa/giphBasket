@@ -16,6 +16,9 @@ html, body {
 	padding-bottom: 20px;
 }
 
+.gif-box {
+	text-align: center;}
+
 #search {
 	background-color: #FFBF86;
 	border-radius: 15px;
