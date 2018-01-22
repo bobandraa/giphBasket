@@ -32,6 +32,6 @@ function searchData(url) {
 }; 
 
 function displayGif(gifUrl) {
-	
-
+	let htmlSrc = "<img src='" + gifUrl + "'/>" 
+	console.log(htmlSrc);
 }
