@@ -32,6 +32,12 @@ function searchData(url) {
 }; 
 
 function displayGif(gifUrl) {
-	let htmlSrc = "<img src='" + gifUrl + "'/>" 
-	console.log(htmlSrc);
+	let imgTag = document.createElement("img");
+	imgTag.src = gifUrl;
+	let searchResultsDiv = document.getElementsByClassName("search-results");
+
+	console.log (searchResultsDiv);
+	searchResultsDiv[0].appendChild(imgTag);
+
+
 }
