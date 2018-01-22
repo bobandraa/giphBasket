@@ -1,4 +1,6 @@
+
 document.getElementById('search').addEventListener('keyup', getText);
+document.getElementsByClassName('input')[0].addEventListener('click', clearDom);
 
 function buildUrl (userQuery){
 	let api = "http://api.giphy.com/v1/gifs/search?";
@@ -38,9 +40,20 @@ function displayGif(gifUrl) {
 	let imgTag = document.createElement("img");
 	imgTag.src = gifUrl;
 	let searchResultsDiv = document.getElementsByClassName("gif-box");
-
-	console.log (searchResultsDiv);
+	// console.log (searchResultsDiv);
 	searchResultsDiv[0].appendChild(imgTag);
-
-
 }
+
+function clearDom(event) {
+	console.log("test");
+  event.target.value = " ";
+  
+  // return textbox;
+	// if (event.keyCode === 13) {
+	// let searchResultsDiv = document.getElementsByClassName("gif-box")[0];
+ // 	searchResultsDiv.parentNode.removeChild(searchResultsDiv);
+
+
+	// }
+		
+	};
