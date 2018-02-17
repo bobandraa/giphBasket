@@ -1,6 +1,7 @@
 
-document.getElementById('search').addEventListener('keyup', getText);
-document.getElementsByClassName('input')[0].addEventListener('click', clearSearch);
+document.getElementById('search').addEventListener('keyup', keyupHandler);
+document.getElementsByClassName('input')[0].addEventListener('click', clearSearch); 
+// document.getElementsByClassName('input')[0].addEventListener('click', clickHandler);
 
 function buildUrl (userQuery){
 	let api = "http://api.giphy.com/v1/gifs/search?";
@@ -11,7 +12,7 @@ function buildUrl (userQuery){
 	return url;
 };
 
-function getText (event){
+function keyupHandler (event){
   if (event.keyCode === 13)
   {
   let word = event.target.value;
@@ -23,6 +24,7 @@ function getText (event){
 };
 
 function searchData(url) { 
+	resetGifBox();
 	fetch(url)
 	.then(function(response){
 		return response.json();
@@ -36,14 +38,33 @@ function searchData(url) {
 	})
 }; 
 
+
 function displayGif(gifUrl) {
 	let imgTag = document.createElement("img");
 	imgTag.src = gifUrl;
-	let searchResultsDiv = document.getElementsByClassName("gif-box");
+	let gifBoxDiv = document.getElementsByClassName("gif-box");
+	// console.log(searchResultsDiv[0]);
+	// searchResultsDiv[0].removeChild(imgTag);
+	gifBoxDiv[0].appendChild(imgTag);
 	// console.log (searchResultsDiv);
-	searchResultsDiv[0].appendChild(imgTag);
 }
 
-function clearSearch(event) {
+function clearSearch() {
   event.target.value = " ";		
 	};
+
+function resetGifBox(){
+	let gifBoxDiv = document.getElementsByClassName("gif-box")[0];
+	gifBoxDiv.innerHTML = "";
+	console.log(gifBoxDiv);
+ 	// searchResultsDiv.parentNode.removeChild(searchResultsDiv);
+
+};
+
+
+// function clickHandler() {
+// 	clearSearch();
+// }
+	
+ 	
+
