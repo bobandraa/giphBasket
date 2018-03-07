@@ -83,6 +83,4 @@ function addClassToImg(event) {
 // 	clearSearch();
 // };
 	
- 	
-
-// Line 45 and 56 are the same- can we use global variables?
+ 
