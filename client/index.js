@@ -37,34 +37,51 @@ function searchData(url) {
 		}
 	})
 }; 
-
+	
 
 function displayGif(gifUrl) {
 	let imgTag = document.createElement("img");
 	imgTag.src = gifUrl;
 	let gifBoxDiv = document.getElementsByClassName("gif-box");
-	// console.log(searchResultsDiv[0]);
 	// searchResultsDiv[0].removeChild(imgTag);
 	gifBoxDiv[0].appendChild(imgTag);
-	// console.log (searchResultsDiv);
+	// adding selected class to img tags that users clicked
+	gifBoxDiv[0].addEventListener('click', addClassToImg);
 }
 
 function clearSearch() {
-  event.target.value = " ";		
-	};
+  event.target.value = "";		
+};
 
 function resetGifBox(){
 	let gifBoxDiv = document.getElementsByClassName("gif-box")[0];
 	gifBoxDiv.innerHTML = "";
-	console.log(gifBoxDiv);
- 	// searchResultsDiv.parentNode.removeChild(searchResultsDiv);
-
 };
+
+function addClassToImg(event) {
+	let selectedGif = event.target;
+	selectedGif.classList.add('selected');
+	console.log(selectedGif);
+};
+
+// function collectGifs (event){
+// 	// let gifArray = document.getElementsByTagName('img');
+// 	// console.log(gifArray);
+// 	for (i = 0; i < gifArray.length; i++){
+// 		gifArray[i].addEventListener('click', function(){
+// 			let selectedSrc = selectedImg.currentSrc;
+// 			console.log(selectedSrc);
+// 	});
+// }; 
+
+// };
+
 
 
 // function clickHandler() {
 // 	clearSearch();
-// }
+// };
 	
  	
 
+// Line 45 and 56 are the same- can we use global variables?
