@@ -1,6 +1,8 @@
 
 document.getElementById('search').addEventListener('keyup', keyupHandler);
 document.getElementsByClassName('input')[0].addEventListener('click', clearSearch); 
+
+// document.getElementsByTagName('img')[0].addEventListener('click', collectGifs);
 // document.getElementsByClassName('input')[0].addEventListener('click', clickHandler);
 
 function buildUrl (userQuery){
