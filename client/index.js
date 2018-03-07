@@ -8,7 +8,7 @@ function buildUrl (userQuery){
 	let apiKey ="&api_key=Yzt6D7cNWlMRwMfklZWcERZvLk5Tnart";
 	let query = "&q=" + userQuery + "&limit=50";
 	let url = api + apiKey + query;
-	console.log(url);
+	// console.log(url);
 	return url;
 };
 
@@ -20,15 +20,14 @@ function keyupHandler (event){
   let url = buildUrl(word);
   searchData(url);
   }
-
 };
 
 function searchData(url) { 
 	resetGifBox();
+	
 	fetch(url)
 	.then(function(response){
 		return response.json();
-
 	})
 	.then(function(gifJson) {
 		for (i = 0; i < gifJson.data.length; i++){
