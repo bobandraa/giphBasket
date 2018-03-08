@@ -46,6 +46,7 @@ function displayGif(gifUrl) {
 	let gifBoxDiv = document.getElementsByClassName("gif-box");
 	// searchResultsDiv[0].removeChild(imgTag);
 	gifBoxDiv[0].appendChild(imgTag);
+
 	// adding selected class to img tags that users clicked
 	gifBoxDiv[0].addEventListener('click', addClassToImg);
 }
@@ -62,20 +63,16 @@ function resetGifBox(){
 function addClassToImg(event) {
 	let selectedGif = event.target;
 	selectedGif.classList.add('selected');
-	console.log(selectedGif);
+	addGifToBasket(selectedGif);
 };
 
-// function collectGifs (event){
-// 	// let gifArray = document.getElementsByTagName('img');
-// 	// console.log(gifArray);
-// 	for (i = 0; i < gifArray.length; i++){
-// 		gifArray[i].addEventListener('click', function(){
-// 			let selectedSrc = selectedImg.currentSrc;
-// 			console.log(selectedSrc);
-// 	});
-// }; 
+function addGifToBasket (gif) {
+	if (gif.classList.contains('selected') ){
+		gifBasket.push(gif.currentSrc);
+		console.log(gifBasket);
+	};
 
-// };
+};
 
 
 
