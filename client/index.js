@@ -21,6 +21,7 @@ function keyupHandler (event){
 	// console.log(word);
   let url = buildUrl(word);
   searchData(url);
+  showBtn();
   }
 };
 
@@ -53,6 +54,12 @@ function displayGif(gifUrl) {
 
 function clearSearch() {
   event.target.value = "";		
+};
+
+function showBtn(){
+	let saveButton = document.getElementsByTagName("button")[0];
+	console.log(saveButton);
+	saveButton.classList.add("show");
 };
 
 function resetGifBox(){
