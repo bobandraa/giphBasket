@@ -5,6 +5,7 @@ html, body {
 	margin: 20px;
 }
 button {
+	display: none;
 	border-radius: 15px;
 	margin: 40px;
 	padding: 20px;
@@ -49,14 +50,6 @@ button {
 input:focus {
     outline: none;
   }
-
-.show-btn{
-	display: block;
-}
-
-.hide{
-	display: none;
-}
 
 .show{
 	display: block;
