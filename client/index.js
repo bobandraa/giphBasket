@@ -76,15 +76,22 @@ function addClassToImg(event) {
 function addGifToBasket (gif) {
 	if (gif.classList.contains('selected') ){
 		gifBasket.push(gif.currentSrc);
-		console.log(gifBasket);
+		// console.log(gifBasket);
 	};
 
 };
 
+function saveSelection (){
+	let gifSelection = document.getElementById('save-gifs').addEventListener('click', function(){
+		console.log(gifBasket);
+	});
+};
 
 
-// function clickHandler() {
-// 	clearSearch();
-// };
+
+function clickHandler() {
+	clearSearch();
+	saveSelection();
+};
 	
  
