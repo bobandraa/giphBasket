@@ -1,9 +1,9 @@
 
 document.getElementById('search').addEventListener('keyup', keyupHandler);
-document.getElementsByClassName('input')[0].addEventListener('click', clearSearch); 
+// document.getElementsByClassName('input')[0].addEventListener('click', clearSearch); 
 var gifBasket = [];
 // document.getElementsByTagName('img')[0].addEventListener('click', addGifToBasket);
-// document.getElementsByClassName('input')[0].addEventListener('click', clickHandler);
+document.getElementsByClassName('input')[0].addEventListener('click', clickHandler);
 
 function buildUrl (userQuery){
 	let api = "http://api.giphy.com/v1/gifs/search?";
@@ -42,9 +42,9 @@ function searchData(url) {
 	
 
 function displayGif(gifUrl) {
-	let imgTag = document.createElement("img");
+	let imgTag = document.createElement('img');
 	imgTag.src = gifUrl;
-	let gifBoxDiv = document.getElementsByClassName("gif-box");
+	let gifBoxDiv = document.getElementsByClassName('gif-box');
 	// searchResultsDiv[0].removeChild(imgTag);
 	gifBoxDiv[0].appendChild(imgTag);
 
@@ -57,13 +57,13 @@ function clearSearch() {
 };
 
 function showBtn(){
-	let saveButton = document.getElementsByTagName("button")[0];
+	let saveButton = document.getElementsByTagName('button')[0];
 	console.log(saveButton);
-	saveButton.classList.add("show");
+	saveButton.classList.add('show');
 };
 
 function resetGifBox(){
-	let gifBoxDiv = document.getElementsByClassName("gif-box")[0];
+	let gifBoxDiv = document.getElementsByClassName('gif-box')[0];
 	gifBoxDiv.innerHTML = "";
 };
 
