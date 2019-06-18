@@ -6,7 +6,7 @@ var gifBasket = [];
 document.getElementsByClassName('input')[0].addEventListener('click', clickHandler);
 
 function buildUrl (userQuery){
-	let api = "http://api.giphy.com/v1/gifs/search?";
+	let api = "https://api.giphy.com/v1/gifs/search?";
 	let apiKey ="&api_key=Yzt6D7cNWlMRwMfklZWcERZvLk5Tnart";
 	let query = "&q=" + userQuery + "&limit=50";
 	let url = api + apiKey + query;
