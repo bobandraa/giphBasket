@@ -1,6 +1,6 @@
 
 document.getElementById('search').addEventListener('keyup', keyupHandler);
-// document.getElementsByClassName('input')[0].addEventListener('click', clearSearch); 
+// document.getElementsByClassName('input')[0].addEventListener('click', clearSearch);
 var gifBasket = [];
 // document.getElementsByTagName('img')[0].addEventListener('click', addGifToBasket);
 document.getElementsByClassName('input')[0].addEventListener('click', clickHandler);
@@ -25,9 +25,9 @@ function keyupHandler (event){
   }
 };
 
-function searchData(url) { 
+function searchData(url) {
 	resetGifBox();
-	
+
 	fetch(url)
 	.then(function(response){
 		return response.json();
@@ -38,14 +38,12 @@ function searchData(url) {
 			displayGif(gifUrl);
 		}
 	})
-}; 
-	
+};
 
 function displayGif(gifUrl) {
 	let imgTag = document.createElement('img');
 	imgTag.src = gifUrl;
 	let gifBoxDiv = document.getElementsByClassName('gif-box');
-	// searchResultsDiv[0].removeChild(imgTag);
 	gifBoxDiv[0].appendChild(imgTag);
 
 	// adding selected class to img tags that users clicked
@@ -53,12 +51,11 @@ function displayGif(gifUrl) {
 }
 
 function clearSearch() {
-  event.target.value = "";		
+  event.target.value = "";
 };
 
 function showBtn(){
 	let saveButton = document.getElementsByTagName('button')[0];
-	console.log(saveButton);
 	saveButton.classList.add('show');
 };
 
@@ -69,29 +66,29 @@ function resetGifBox(){
 
 function addClassToImg(event) {
 	let selectedGif = event.target;
-	selectedGif.classList.add('selected');
-	addGifToBasket(selectedGif);
+	selectedGif.classList.toggle('selected');
 };
 
-function addGifToBasket (gif) {
-	if (gif.classList.contains('selected') ){
-		gifBasket.push(gif.currentSrc);
-		// console.log(gifBasket);
-	};
+function addSelectedGifToBasket () {
+	let selectedGif = Array.from(document.querySelectorAll('.gif-box .selected'));
+	let selectedArray = selectedGif.map(gif => gif.src);
+	console.log(selectedArray);
+
+	// let selectedArray = selectedGif.map(function(gif, i) {
+	// 	return gif.src;
+	// });
+	// console.log(selectedArray);
+
 
 };
 
 function saveSelection (){
-	let gifSelection = document.getElementById('save-gifs').addEventListener('click', function(){
-		console.log(gifBasket);
-	});
+	let gifSelection = document.getElementById('save-gifs').addEventListener('click', addSelectedGifToBasket);
 };
-
-
 
 function clickHandler() {
 	clearSearch();
 	saveSelection();
 };
-	
- 
+
+
